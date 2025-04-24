@@ -1,17 +1,20 @@
 import { Text, View, Pressable} from "react-native";
+import React,{useState} from "react";
 
 export default function Index() {
-  let score = 0
+  const [score, setscore] = useState(0);
   return (
+    // make button and show score
     <View>
+      <Text style={{ fontSize: 32, marginBottom: 20 }}>{score}</Text>
   <Pressable
-    onPress={() => score += 1}
+    onPress={() => setscore (score + 1)}
     style={({ pressed }) => ({
       backgroundColor: pressed ? 'lightgray' : 'skyblue',
       padding: 10,
     })}
   >
-    <Text>POP</Text>
+    <Text>Click here</Text>
   </Pressable>
 
     </View>
